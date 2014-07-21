@@ -2,7 +2,7 @@
 
 require 'config.php';
 
-$db= new mysqli($mysql['host'],$mysql['user'],$mysql['pw'],$mysql['db']);
+$db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);
 if($db->connect_error) {
 	die('Connect Error (' . $mysqli->connect_errno . ') '. $mysqli->connect_error);
 }

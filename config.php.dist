@@ -5,4 +5,11 @@ $mysql=array(
 	'password'=>'',
 	'db'=>'ldap_reg',
 	'host'=>'localhost',
-)
+);
+
+$ldap=array (
+	'host' =>'ldap.milliways.info',
+	'base_dn' => 'ou=users,dc=milliways,dc=info',
+	'bind_rdn' => 'cn=root,cn=milliways,cn=info',
+	'bind_pw'  => '',
+);
