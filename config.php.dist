@@ -1,0 +1,8 @@
+<?php
+
+$mysql=array(
+	'user'=>'root',
+	'password'=>'',
+	'db'=>'ldap_reg',
+	'host'=>'localhost',
+)
