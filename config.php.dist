@@ -13,3 +13,6 @@ $ldap=array (
 	'bind_rdn' => 'cn=root,cn=milliways,cn=info',
 	'bind_pw'  => '',
 );
+$mails=array (
+	
+);
