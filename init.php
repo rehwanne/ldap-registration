@@ -4,7 +4,7 @@ require 'config.php';
 
 function sendmail($mails,$user){
 	foreach($mails as $to)
-		mail($to,'New User in Database','New User in Database $user');
+		mail($to,'New User in Database','New User in Database: '.$user);
 }
 
 $db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);
