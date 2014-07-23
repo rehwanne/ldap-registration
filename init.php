@@ -2,11 +2,6 @@
 
 require 'config.php';
 
-function sendmail($mails,$user){
-	foreach($mails as $to)
-		mail($to,'New User in Database','New User in Database $user');
-}
-
 $db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);
 if($db->connect_error) {
 	die('Connect Error (' . $db->connect_errno . ') '. $db->connect_error);

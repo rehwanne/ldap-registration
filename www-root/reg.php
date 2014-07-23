@@ -54,7 +54,6 @@ $stmt->bind_param('ssss',
 				$_SERVER['REMOTE_ADDR']
 				);
 $stmt->execute();
-sendmail($mails,$username);
 $stmt->close();
 die('successfull added');
 
