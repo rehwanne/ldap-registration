@@ -40,5 +40,6 @@ $add = ldap_add($ldapconn, "uid=$username,ou=users,dc=milliways,dc=info", $info)
 $stmt=$db->prepare('DELETE FROM regs WHERE username = ?');
 $stmt->bind_param('s',$username);
 $stmt->execute();
+sendmail($mails,$username,true);
 $stmt->close();
 ?>

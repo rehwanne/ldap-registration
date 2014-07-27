@@ -2,10 +2,15 @@
 
 require 'config.php';
 
-function sendmail($mails,$user){
+function sendmail($mails,$user,$act){
+	if($act){
 	foreach($mails as $to)
 		mail($to,'New User in Database','New User in Database: '.$user);
-}
+	}else
+	{foreach($mails as $to)
+		mail($to,'User has been activated','User has been activated: '.$user);
+	}
+	}
 
 $db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);
 if($db->connect_error) {
