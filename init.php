@@ -3,7 +3,7 @@
 require 'config.php';
 
 function sendmail($mails,$user,$act){
-	if($act){
+	if(!$act){
 	foreach($mails as $to)
 		mail($to,'New User in Database','New User in Database: '.$user);
 	}else
