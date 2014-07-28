@@ -56,7 +56,7 @@ $stmt->bind_param('ssss',
 $stmt->execute();
 sendmail($mails,$username,false);
 $stmt->close();
-die('successfull added');
+die('The Administrators have been noticed and your Account will be activated in a timely manner');
 
 
 
