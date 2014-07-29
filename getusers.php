@@ -5,7 +5,7 @@ $result = ldap_search($ldapconn,$ldap['base_dn'], "(cn=*)") or die ("Error in se
 $data = ldap_get_entries($ldapconn, $result);
 
 foreach($data as $user){
-	echo "User: ". $user["mail"][0]."\n";
+	echo "User: ". $user["user"][0]." Mail: ". $user["mail"][0]'\n'';
 }
 
 ?>
