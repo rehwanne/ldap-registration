@@ -33,3 +33,11 @@ run
 	php delete.php %user%
 
 
+h2. See  which users are in LDAP 
+
+run 	
+	php getusers.php
+	
+h2. delete users from LDAP
+	
+	will come
