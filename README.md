@@ -32,14 +32,16 @@ run
 
 	php delete.php %user%
 
+### delete user from LDAP
 
+run	
+	
+	php delete.php %user% ldap 
+	
 ## See  which users are in LDAP 
 
 run 	
+	
 	php getusers.php
 	
-##Still to come:	
-
-### delete users from LDAP
-	
-	will come
+##Still to come:
