@@ -12,7 +12,6 @@ $ldap=array (
 	'base_dn' => 'ou=users,dc=milliways,dc=info',
 	'bind_rdn' => 'cn=root,cn=milliways,cn=info',
 	'bind_pw'  => '',
-	'dc' => 'dc=milliways,dc=info',
 );
 $mails=array (
 	
