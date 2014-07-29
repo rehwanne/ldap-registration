@@ -3,25 +3,17 @@
 require "init.php";
 
 $username=$argv[1];
-if(isset($arv[2])){
-	$backend=$argv[2];
-  }
-if(isset($backend)){
-  if($backend == "sql")
-    {
-      $stmt=$db->prepare('DELETE FROM regs WHERE username = ?');
-      $stmt->bind_param('s',$username);
-      $stmt->execute();
-  }elseif("$backend == ldap"){
-      if(ldap_delete($ldapconnm,'dn='.$username.','.$ldap['dc'])){
+$backend=$argv[2];
+$dn = 'uid='.$username.$ldap['base_dn'];
+if($backend == "ldap"){
+      if(ldap_delete($ldapconn,$dn)){
         echo "Successfully deleted";
         }else{
         echo "Something went wrong";
-        }
-  }else{
+	}
+}else{
       $stmt=$db->prepare('DELETE FROM regs WHERE username = ?');
       $stmt->bind_param('s',$username);
       $stmt->execute();
-  }
 }
 ?>
