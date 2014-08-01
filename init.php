@@ -13,7 +13,7 @@ function sendmail($mails,$user,$act){
 	}
 
 function subscribe($username){
-	mail('subscribebla','subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
+	mail($mail['mail'],'subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
 }
 
 $db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);

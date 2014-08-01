@@ -14,5 +14,5 @@ $ldap=array (
 	'bind_pw'  => '',
 );
 $mails=array (
-	
+	'ml' => '',	
 );
