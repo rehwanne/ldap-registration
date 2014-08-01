@@ -12,6 +12,10 @@ function sendmail($mails,$user,$act){
 	}
 	}
 
+function subscribe($username){
+	mail('subscribebla','subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
+}
+
 $db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);
 if($db->connect_error) {
 	die('Connect Error (' . $db->connect_errno . ') '. $db->connect_error);
