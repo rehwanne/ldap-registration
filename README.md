@@ -30,11 +30,11 @@ run
 
 run
 
-	php delete.php %user%
+	php delete.php %user% %databasetype%
 
-### delete user from LDAP
+	Database types are: sql or ldap 
 
-run	
+	so if you want to delete a user from the LDAP:
 	
 	php delete.php %user% ldap 
 	

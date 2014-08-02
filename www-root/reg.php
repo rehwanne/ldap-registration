@@ -30,11 +30,11 @@ if(sizeof($errors)===0) {
 }
 
 if($password!==$password2) {
-	$errors[]="not smame password";
+	$errors[]="The given Passwords do not match";
 }
 
 if(strlen($password)<6) {
-	$errors[]="password must be minimum 6 chars long";
+	$errors[]="password must be atleast 6 characters long";
 }
 
 if(sizeof($errors)!==0) {
@@ -48,16 +48,15 @@ if($stmt===false) {
 	die('internal prepare error: '.$db->error);
 }
 $stmt->bind_param('ssss',
-				$username,
-				crypt($password,'$6$'.generateSalt(10).'$'),
-				date(DateTime::W3C),
-				$_SERVER['REMOTE_ADDR']
-				);
+	$username,
+	crypt($password,'$6$'.generateSalt(10).'$'),
+	date(DateTime::W3C),
+	$_SERVER['REMOTE_ADDR']
+	);
 $stmt->execute();
 sendmail($mails,$username,false);
 $stmt->close();
 die('The Administrators have been noticed and your Account will be activated in a timely manner');
-
 
 
 function generateSalt($length=10) {
