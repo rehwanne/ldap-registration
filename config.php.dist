@@ -1,18 +1,19 @@
 <?php
 
 $mysql=array(
-	'user'=>'root',
-	'password'=>'',
-	'db'=>'ldap_reg',
-	'host'=>'localhost',
+	'user'=>'root', 		//Database user
+	'password'=>'',			//Password of Database user
+	'db'=>'ldap_reg',		//Database form db.sql
+	'host'=>'localhost',	//address of Database Server
 );
 
 $ldap=array (
-	'host' =>'ldap.milliways.info',
-	'base_dn' => 'ou=users,dc=milliways,dc=info',
-	'bind_rdn' => 'cn=root,cn=milliways,cn=info',
-	'bind_pw'  => '',
+	'host' =>'', //ldap Host
+	'base_dn' => '',  //base dn of you Directory like: ou=users,dc=server,dc=tld
+	'bind_rdn' => '',  //base root cn of you Directory like: cn=root,dc=server,dc=tld
+	'bind_pw'  => '', 							   //the password of you Directory user
 );
 $mails=array (
-	'ml' => '',	
+
 );
+$ml = 'none'		//change if you want to automatically subscribe new users to a mailing list, change it to you ml subscribe address
