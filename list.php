@@ -9,5 +9,5 @@ $stmt->execute();
 $stmt->bind_result($username, $date,$ip);
 
 while($stmt->fetch()) {
-	echo $username."\n\t".$date."\t".$ip."\n";
+    echo $username."\n\t".$date."\t".$ip."\n";
 }

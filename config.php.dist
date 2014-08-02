@@ -16,4 +16,4 @@ $ldap=array (
 $mails=array (
 
 );
-$ml = 'none'		//change if you want to automatically subscribe new users to a mailing list, change it to you ml subscribe address
+$ml = 'none';	//change if you want to automatically subscribe new users to a mailing list, change it to you ml subscribe address
