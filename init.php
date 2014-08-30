@@ -13,8 +13,8 @@ function sendmail($mails,$user,$act){
 }
 
 function subscribe($username,$ml){
-	if($ml] != 'none'){
-		mail($ml],'subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
+	if($ml != 'none'){
+		mail($ml, 'subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
 	}else{
 		return 0;
 	}

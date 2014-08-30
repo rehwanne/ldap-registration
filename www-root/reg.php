@@ -59,14 +59,3 @@ $stmt->close();
 die('The Administrators have been noticed and your Account will be activated in a timely manner');
 
 
-function generateSalt($length=10) {
-	$chars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	
-	$string="";
-	for($i=0;$i<$length;$i++) {
-		$string.=substr($chars,rand(0,strlen($chars)-1),1);
-	}
-	
-	return $string;
-}
-
