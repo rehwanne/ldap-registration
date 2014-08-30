@@ -10,7 +10,7 @@ $password2=$_POST['password2'];
 //check data
 $errors=array();
 if(!preg_match('/^[a-zA-Z0-9_-]+$/',$username)===1 && strlen($username)>=3) {
-	$errors[]="username only [a-zA-Z0-9_-] and minimum lenght of 3";
+	$errors[]="username only [a-zA-Z0-9_-] and minimum lenght of 2";
 }
 
 if(sizeof($errors)===0) {

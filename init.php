@@ -13,11 +13,22 @@ function sendmail($mails,$user,$act){
 }
 
 function subscribe($username,$ml){
-	if($mails['ml'] != 'none'){
-		mail($mails['ml'],'subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
+	if($ml] != 'none'){
+		mail($ml],'subscribe','subscribe',$header = 'From:'.$username.'@milliways.info' . "\r\n");
 	}else{
 		return 0;
 	}
+}
+
+function generateSalt($length=10) {
+  $chars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  $string="";
+  for($i=0;$i<$length;$i++) {
+    $string.=substr($chars,rand(0,strlen($chars)-1),1);
+  }
+
+  return $string;
 }
 
 $db= new mysqli($mysql['host'],$mysql['user'],$mysql['password'],$mysql['db']);
@@ -37,7 +48,6 @@ $bind = ldap_bind($ldapconn,$ldap['bind_rdn'], $ldap['bind_pw']);
 
 
 if($bind===false) {
-//  var_dump($ldapconn,$ldap['bind_rdn'], $ldap['bind_pw']);
 	die('can\'t bind to ldap: '.ldap_error ($ldapconn));
 }
 

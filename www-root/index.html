@@ -8,12 +8,20 @@ Your Account will be activated after an approval by a Milliways Communications A
 </p>
 <p>
 <form method="POST" action="reg.php">
-	<input placeholder="username" required="required" name="username" type="text" pattern="[a-zA-Z0-9._-]{3,30}" /> <p>
-	<input placeholder="password" required="required" name="password" type="password" /> <p>
-	<input placeholder="password repeat" required="required" name="password2" type="password" /> <p>
+	<input placeholder="username" required="required" name="username" type="text" pattern="[a-zA-Z0-9._-]{3,30}" /> <br />
+	<input placeholder="password" required="required" name="password" type="password" /> <br />
+	<input placeholder="repeat password" required="required" name="password2" type="password" /> <br />
 	<input type="submit" />
 </form>
 </p>
+<h1>Change Password</h1>
+<form method="POST" action="passwd.php">
+  <input placeholder="username" required="required" name="username" type="text" pattern="[a-zA-Z0-9._-]{3,30}" /> <br />
+  <input placeholder="old password" required="required" name="password_old" type="password" /> <br />
+  <input placeholder="new password" required="required" name="password_new" type="password" /> <br />
+  <input placeholder="repeat new password" required="required" name="password_new2" type="password" /> <br />
+  <input type="submit" />
+</form>
 </body>
 
 
