@@ -26,7 +26,7 @@ if(!preg_match('/^[a-zA-Z0-9_-]+$/',$username)===1 && strlen($username)>=2) {
 if(sizeof($errors)==0) {
   $ldapconn_passwd = ldap_connect($ldap['host']);
   ldap_set_option($ldapconn_passwd, LDAP_OPT_PROTOCOL_VERSION, 3);
-  $ldapbind_passwd = @ldap_bind($ldapconni_passwd,"uid=$username,ou=users,dc=milliways,dc=info",$password_old);
+  $ldapbind_passwd = @ldap_bind($ldapconn_passwd,"uid=$username,ou=users,dc=milliways,dc=info",$password_old);
   if(!$ldapbind_passwd) {
     $errors[]="password is wrong";
   }
