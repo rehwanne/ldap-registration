@@ -10,21 +10,21 @@ $password2=$_POST['password2'];
 //check data
 $errors=array();
 if(!preg_match('/^[a-zA-Z0-9_-]+$/',$username)===1 && strlen($username)>=3) {
-	$errors[]="username only [a-zA-Z0-9_-] and minimum lenght of 2";
+	$errors[]="Username may only include [a-zA-Z0-9_-] and have a minimum lenght of 3";
 }
 
 if(sizeof($errors)===0) {
 	$sr=ldap_search($ldapconn,$ldap['base_dn'],'(uid='.$username.')');
 	$info = ldap_get_entries($ldapconn, $sr);
 	if($info['count']!==0) {
-		$errors[]="username allready in use";
+		$errors[]="Username already in use";
 	}
 	$stmt=$db->prepare("SELECT `username` FROM regs WHERE `username` = ?");
 	$stmt->bind_param('s',$username);
 	$stmt->execute();
 	$stmt->store_result();
 	if($stmt->num_rows!==0) {
-		$errors[]="username allready in use";
+		$errors[]="Username already in use";
 	}
 	$stmt->close();
 }
@@ -34,7 +34,7 @@ if($password!==$password2) {
 }
 
 if(strlen($password)<6) {
-	$errors[]="password must be atleast 6 characters long";
+	$errors[]="Password must be atleast 6 characters long";
 }
 
 if(sizeof($errors)!==0) {
